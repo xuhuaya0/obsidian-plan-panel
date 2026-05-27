@@ -20,7 +20,7 @@ It follows the active Markdown file and helps you decide what to do today, what 
 Copy these files into an Obsidian vault plugin folder:
 
 ```text
-.obsidian/plugins/obsidian-plan-panel/
+.obsidian/plugins/plan-panel/
   main.js
   manifest.json
   styles.css

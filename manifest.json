@@ -1,9 +1,9 @@
 {
-  "id": "obsidian-plan-panel",
+  "id": "plan-panel",
   "name": "Plan Panel",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "minAppVersion": "1.5.0",
   "description": "Show and classify Markdown plans by Eisenhower quadrants.",
-  "author": "Local",
+  "author": "xuhuaya0",
   "isDesktopOnly": false
 }
