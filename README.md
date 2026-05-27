@@ -16,7 +16,7 @@ It follows the active Markdown file and provides:
 Copy these files into an Obsidian vault plugin folder:
 
 ```text
-.obsidian/plugins/plan-priority-board/
+.obsidian/plugins/obsidian-plan-panel/
   main.js
   manifest.json
   styles.css
