@@ -1,0 +1,17 @@
+{
+  "name": "obsidian-plan-panel",
+  "version": "0.2.1",
+  "description": "An Obsidian plugin for planning Markdown tasks with Today and quadrant views.",
+  "main": "main.js",
+  "scripts": {
+    "check": "node --check main.js"
+  },
+  "keywords": [
+    "obsidian",
+    "plugin",
+    "planning",
+    "tasks"
+  ],
+  "author": "Local",
+  "license": "MIT"
+}

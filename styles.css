@@ -1,0 +1,398 @@
+.plan-board-view {
+  --pb-line: var(--background-modifier-border);
+  --pb-muted: var(--text-muted);
+  --pb-panel: var(--background-primary);
+  --pb-soft: var(--background-secondary);
+  --pb-accent: var(--interactive-accent);
+  --pb-q1: #bf5b67;
+  --pb-q2: #5f8f73;
+  --pb-q3: #c08a3e;
+  --pb-q4: #74849a;
+  --pb-q1-bg: color-mix(in srgb, var(--pb-q1), transparent 86%);
+  --pb-q2-bg: color-mix(in srgb, var(--pb-q2), transparent 86%);
+  --pb-q3-bg: color-mix(in srgb, var(--pb-q3), transparent 85%);
+  --pb-q4-bg: color-mix(in srgb, var(--pb-q4), transparent 86%);
+  height: 100%;
+  overflow: auto;
+  padding: 18px;
+}
+
+.plan-board-header {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--pb-line);
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+}
+
+.plan-board-title {
+  font-size: 24px;
+  font-weight: 750;
+  margin-bottom: 4px;
+}
+
+.plan-board-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.plan-board-toolbar input,
+.plan-board-toolbar select {
+  min-height: 32px;
+}
+
+.plan-board-current-file {
+  color: var(--pb-muted);
+  font-family: var(--font-monospace);
+  font-size: 12px;
+  line-height: 1.35;
+  max-width: 320px;
+  overflow-wrap: anywhere;
+}
+
+.plan-board-section {
+  margin-top: 18px;
+}
+
+.plan-board-section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.plan-board-section-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.plan-board-panel {
+  background: var(--pb-panel);
+  border: 1px solid var(--pb-line);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.plan-board-list {
+  display: grid;
+  gap: 0;
+}
+
+.plan-board-todo-list {
+  display: grid;
+  gap: 7px;
+}
+
+.plan-board-todo {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  border: 1px solid var(--pb-line);
+  background: var(--pb-panel);
+  border-radius: 7px;
+  padding: 8px 10px;
+}
+
+.plan-board-todo[draggable="true"] {
+  cursor: grab;
+}
+
+.plan-board-todo input {
+  margin-top: 2px;
+}
+
+.plan-board-todo.is-done .plan-board-task-title {
+  color: var(--pb-muted);
+  text-decoration: line-through;
+}
+
+.plan-board-todo-q1 {
+  background: var(--pb-panel);
+  border-color: color-mix(in srgb, var(--pb-q1), var(--pb-line) 55%);
+}
+
+.plan-board-todo-q2 {
+  background: var(--pb-panel);
+  border-color: color-mix(in srgb, var(--pb-q2), var(--pb-line) 55%);
+}
+
+.plan-board-todo-q3 {
+  background: var(--pb-panel);
+  border-color: color-mix(in srgb, var(--pb-q3), var(--pb-line) 55%);
+}
+
+.plan-board-todo-q4 {
+  background: var(--pb-panel);
+  border-color: color-mix(in srgb, var(--pb-q4), var(--pb-line) 55%);
+}
+
+.plan-board-todo-text {
+  min-width: 0;
+}
+
+.plan-board-task {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: start;
+  border: 1px solid var(--pb-line);
+  background: var(--pb-panel);
+  border-radius: 7px;
+  padding: 8px 10px;
+}
+
+.plan-board-task.is-list {
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  grid-template-columns: 20px minmax(0, 1fr) auto;
+  gap: 7px;
+  padding: 3px 4px;
+}
+
+.plan-board-task.is-list + .plan-board-task.is-list {
+  border-top: 0;
+}
+
+.plan-board-task.is-list:hover {
+  background: var(--background-modifier-hover);
+}
+
+.plan-board-task.is-list > input {
+  margin: 4px 0 0 0;
+}
+
+.plan-board-task > input {
+  margin-top: 2px;
+}
+
+.plan-board-task[draggable="true"] {
+  cursor: grab;
+}
+
+.plan-board-task.is-faded {
+  opacity: 0.38;
+}
+
+.plan-board-task.is-done {
+  opacity: 0.58;
+}
+
+.plan-board-task.is-done .plan-board-task-title {
+  color: var(--pb-muted);
+  text-decoration: line-through;
+}
+
+.plan-board-today {
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--pb-muted);
+}
+
+.plan-board-today.is-active {
+  color: var(--text-on-accent);
+  background: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+.plan-board-task-main {
+  min-width: 0;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.plan-board-indent {
+  flex: none;
+  width: calc(var(--level) * 22px);
+}
+
+.plan-board-task.is-list .plan-board-task-main {
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.plan-board-task.is-list .plan-board-indent {
+  align-self: stretch;
+  min-height: 24px;
+  width: calc(var(--level) * 18px);
+  background-image: linear-gradient(
+    to right,
+    transparent 8px,
+    color-mix(in srgb, var(--pb-line), transparent 35%) 8px,
+    color-mix(in srgb, var(--pb-line), transparent 35%) 9px,
+    transparent 9px
+  );
+  background-size: 18px 100%;
+  background-repeat: repeat-x;
+}
+
+.plan-board-toggle {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan-board-task.is-list .plan-board-toggle {
+  width: 18px;
+  height: 24px;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  color: var(--pb-muted);
+  opacity: 0.86;
+}
+
+.plan-board-task.is-list .plan-board-toggle::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid currentColor;
+  transform: translateX(1px);
+}
+
+.plan-board-task.is-list .plan-board-toggle.is-open::before {
+  transform: rotate(90deg) translateX(1px);
+}
+
+.plan-board-task.is-list .plan-board-toggle:hover {
+  color: var(--text-normal);
+  background: color-mix(in srgb, var(--pb-line), transparent 65%);
+}
+
+.plan-board-toggle.is-empty {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.plan-board-task.is-list .plan-board-task-title {
+  padding-top: 2px;
+}
+
+.plan-board-task-title {
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+.plan-board-path {
+  color: var(--pb-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.plan-board-done-date {
+  color: var(--pb-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.plan-board-empty {
+  color: var(--pb-muted);
+  border: 1px dashed var(--pb-line);
+  border-radius: 7px;
+  padding: 16px;
+  text-align: center;
+}
+
+.plan-board-quads {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.plan-board-remove-zone {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  border: 1px dashed var(--pb-line);
+  border-radius: 8px;
+  padding: 9px 11px;
+  margin-top: 10px;
+  color: var(--pb-muted);
+  background: var(--background-secondary);
+}
+
+.plan-board-remove-zone span:first-child {
+  color: var(--text-normal);
+  font-weight: 700;
+}
+
+.plan-board-remove-zone.is-over {
+  outline: 3px solid color-mix(in srgb, var(--pb-accent), transparent 70%);
+}
+
+.plan-board-quad {
+  min-height: 220px;
+  border: 1px solid var(--pb-line);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--pb-soft);
+}
+
+.plan-board-quad-q1 {
+  background: var(--pb-q1-bg);
+  border-color: color-mix(in srgb, var(--pb-q1), var(--pb-line) 55%);
+}
+
+.plan-board-quad-q2 {
+  background: var(--pb-q2-bg);
+  border-color: color-mix(in srgb, var(--pb-q2), var(--pb-line) 55%);
+}
+
+.plan-board-quad-q3 {
+  background: var(--pb-q3-bg);
+  border-color: color-mix(in srgb, var(--pb-q3), var(--pb-line) 55%);
+}
+
+.plan-board-quad-q4 {
+  background: var(--pb-q4-bg);
+  border-color: color-mix(in srgb, var(--pb-q4), var(--pb-line) 55%);
+}
+
+.plan-board-quad.is-over {
+  outline: 3px solid color-mix(in srgb, var(--pb-accent), transparent 70%);
+}
+
+.plan-board-quad-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.plan-board-quad .plan-board-task {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .plan-board-header {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .plan-board-toolbar {
+    justify-content: flex-start;
+  }
+
+  .plan-board-quads {
+    grid-template-columns: 1fr;
+  }
+}

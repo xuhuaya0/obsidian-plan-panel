@@ -1,0 +1,9 @@
+{
+  "id": "plan-priority-board",
+  "name": "Plan Panel",
+  "version": "0.2.1",
+  "minAppVersion": "1.5.0",
+  "description": "Show and classify Markdown plans by Eisenhower quadrants.",
+  "author": "Local",
+  "isDesktopOnly": false
+}
